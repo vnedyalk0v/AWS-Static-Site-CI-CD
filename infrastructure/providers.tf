@@ -8,10 +8,15 @@ terraform {
     }
   }
 
+  ### Pass the variables during init time
+  ### terraform init \
+  ### -backend-config="bucket=${TFSTATE_BUCKET}" \
+  ### -backend-config="key=${TFSTATE_KEY}" \
+  ### -backend-config="region=${TFSTATE_REGION}"
   backend "s3" {
-    bucket = "your-terraform-state-bucket"
-    key    = "terraform/state"
-    region = var.region
+    # bucket = "your-terraform-state-bucket"
+    # key    = "terraform/state"
+    # region = var.region
   }
 }
 
